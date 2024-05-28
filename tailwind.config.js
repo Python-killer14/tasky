@@ -16,6 +16,9 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    height: {
+      "screen-nav": "calc(100vh - 48px)",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -58,6 +61,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      borderWidth: {
+        sidebarBorder: "1.5px",
       },
       borderRadius: {
         lg: "var(--radius)",

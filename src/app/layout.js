@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className={cn(notoKufiArabic.className, "")}>
         <MaxWidthWrapper>
           <MainNavBar />
-          <main className="flex gap-3 h-full">
+          <main className="flex items-start gap-3 h-full">
             <MainSidebarNav />
             {children}
           </main>

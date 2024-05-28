@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import SidebarMenuItem from "./SidebarMenuItem";
 
-function SidebarCategoryList({ navBarMenus, categoryTitle = "Workspaces" }) {
+function SidebarCategoryList({ navBarMenus, categoryTitle = "", isWorkspace }) {
   return (
     <section className="px-2 mt-5">
       {categoryTitle && (
@@ -11,7 +12,11 @@ function SidebarCategoryList({ navBarMenus, categoryTitle = "Workspaces" }) {
       )}
       <div className="mt-1">
         {navBarMenus.map((menu, index) => (
-          <SidebarMenuItem key={index} menuItem={menu} />
+          <SidebarMenuItem
+            key={index}
+            menuItem={menu}
+            isWorkspace={isWorkspace}
+          />
         ))}
       </div>
     </section>

@@ -78,12 +78,6 @@
     @apply bg-background text-foreground;
     font-family: 'Plein';
     font-weight: 300;
+
   }
 }
-
-/* .freeman-regular * {
-  font-family: "Freeman", sans-serif;
-  font-family: 'Plein', sans-serif;
-  font-weight: 00;
-  font-style: normal;
-} */
