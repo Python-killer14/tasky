@@ -40,7 +40,7 @@ function SidebarMenuItem({ menuItem, isWorkspace = false }) {
           icons[menuItem.iconName]
         )}
         {<span className="text-sm font-medium">{menuItem.name}</span>}
-        {isWorkspace && <ChevronDown className={cn(className)} />}
+        {isWorkspace && <ChevronDown className={cn(className, "ml-auto")} />}
       </div>
     </Link>
   );

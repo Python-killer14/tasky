@@ -1,5 +1,11 @@
 import { auth } from "../../auth";
 
+// export const metadata = {
+//   title: "User's Work space | Tasky",
+//   description:
+//     "Tasky is a simple and powerfull project management kanban platform. ",
+// };
+
 export default async function Home() {
   const session = await auth();
   console.log("Session", session);
