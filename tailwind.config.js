@@ -17,7 +17,10 @@ module.exports = {
       },
     },
     height: {
-      "screen-nav": "calc(100dvh - 53px)",
+      "screen-nav": "calc(100dvh-53px)",
+    },
+    minHeight: {
+      "screen-nav": "calc(100vh-53px)",
     },
     extend: {
       colors: {

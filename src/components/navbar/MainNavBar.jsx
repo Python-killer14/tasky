@@ -15,12 +15,6 @@ function MainNavBar() {
   const { data: session } = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    if (session) {
-      router.push(formatSlug(`/u/${session?.user?.name}/boards`));
-    }
-  }, [session, router]);
-
   return (
     <aside>
       <div className="flex items-center border-b px-4 py-2 border-gray-300 sticky top-0 bg-white">
@@ -45,7 +39,7 @@ function MainNavBar() {
               <Button
                 onClick={() =>
                   signIn("github", {
-                    redirect: `u/${session?.user?.name}/boards`,
+                    redirectTo: `/u/${session?.user?.name}/boards`,
                   })
                 }
               >

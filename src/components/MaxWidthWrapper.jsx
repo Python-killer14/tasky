@@ -5,7 +5,7 @@ function MaxWidthWrapper({ className, children }) {
   return (
     <div
       className={cn(
-        "min-h-screen h-full mx-auto w-full max-w-screen-xl shadow-xl ",
+        "min-h-[calc(100vh-50px)] mx-auto w-full max-w-screen-xl shadow-xl ",
         className
       )}
     >
