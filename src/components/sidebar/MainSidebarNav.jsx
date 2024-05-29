@@ -1,7 +1,6 @@
 import React from "react";
 import SidebarCategoryList from "./SidebarCategoryList";
 import { Divider } from "@mui/material";
-import { ArrowBigDown } from "lucide-react";
 
 const menus = [
   {
@@ -39,8 +38,8 @@ const workspaces = [
 
 function MainSidebarNav() {
   return (
-    <aside className="flex-[20.26%] max-w-[257px] sticky top-[48px] left-0 h-screen-nav border-r-[1px]">
-      <div>{/* Sidebar expander */}</div>
+    <aside className="flex-[20.26%] max-w-[257px] sticky top-0 left-0 h-screen-nav border-r-[1px]">
+      <div>Sidebar expander</div>
       <SidebarCategoryList navBarMenus={menus} />
       <Divider className="my-2" />
       <SidebarCategoryList

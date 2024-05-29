@@ -1,75 +1,66 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 import React from "react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import ProfileMenuItem from "./ProfileMenuItem";
+import { Divider } from "@mui/material";
+import { signoutUser } from "@/lib/signoutFunc";
+import LogoutMenuItem from "./LogoutMenuItem";
+import { auth } from "../../../auth";
+import { useSession } from "next-auth/react";
 
 function PopoverProfileMenu() {
+  const { data: session } = useSession();
+  console.log("session", session);
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="outline">Open popover</Button>
+      <PopoverTrigger>
+        <Avatar className="w-8 h-8 border-[3px] border-gray-300">
+          <AvatarImage
+            src={session && session?.user?.image}
+            alt={session && session?.user && session?.user?.name}
+          />
+        </Avatar>
       </PopoverTrigger>
-    </Popover>
-  );
-}
-
-export default PopoverProfileMenu;
-
-export function PopoverDemo() {
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="outline">Open popover</Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-80 p-0 py-6">
         <div className="grid gap-4">
-          <div className="space-y-2">
-            <h4 className="font-medium leading-none">Dimensions</h4>
-            <p className="text-sm text-muted-foreground">
-              Set the dimensions for the layer.
-            </p>
+          <div className="">
+            <h4 className="font-medium leading-none px-4 mb-2">Account</h4>
+            <div className="flex gap-2 items-center px-4 pt-2 mb-2">
+              <Avatar className="w-8 h-8">
+                <AvatarImage
+                  src={session && session?.user && session?.user?.image}
+                  alt={session && session?.user && session?.user?.name}
+                />
+              </Avatar>
+              <div>
+                <p className="text-sm text-muted-foreground">Robel Tesfay</p>
+                <p className="text-xs text-muted-foreground">
+                  8hjXx@example.com
+                </p>
+              </div>
+            </div>
+            <div>
+              <ProfileMenuItem name="Profile" />
+              <ProfileMenuItem name="Account" />
+            </div>
+            <Divider className="mt-2" />
           </div>
-          <div className="grid gap-2">
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
-              <Input
-                id="width"
-                defaultValue="100%"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
-              <Input
-                id="maxWidth"
-                defaultValue="300px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
-              <Input
-                id="height"
-                defaultValue="25px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
-              <Input
-                id="maxHeight"
-                defaultValue="none"
-                className="col-span-2 h-8"
-              />
-            </div>
+          <div className="grid gap-x-2">
+            <ProfileMenuItem name="Settings" />
+            <ProfileMenuItem name="Billing" />
+            <ProfileMenuItem name="Theme" />
+            <ProfileMenuItem name="Integrations" />
           </div>
+          <Divider className="" />
+          <LogoutMenuItem name="Logout" onClick={signoutUser} />
         </div>
       </PopoverContent>
     </Popover>
   );
 }
+
+export default PopoverProfileMenu;

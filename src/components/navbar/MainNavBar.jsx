@@ -1,19 +1,26 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarMenuItem from "./NavbarMenuItem";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-// Redux
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import UserAvatar from "./UserAvatar";
+//
 import PopoverProfileMenu from "./PopoverProfileMenu";
+import { Button } from "@mui/material";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { formatSlug } from "@/app/utils/formatSlug";
 
 function MainNavBar() {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.userData);
-  console.log("user", user);
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session) {
+      router.push(formatSlug(`/u/${session?.user?.name}/boards`));
+    }
+  }, [session, router]);
+
   return (
     <aside>
       <div className="flex items-center border-b px-4 py-2 border-gray-300 sticky top-0 bg-white">
@@ -30,8 +37,22 @@ function MainNavBar() {
         <div>
           <NavbarMenuItem />
         </div>
-        <div className="ml-auto">
-          <PopoverProfileMenu />
+        <div className="ml-auto flex">
+          {session ? (
+            <PopoverProfileMenu />
+          ) : (
+            <div>
+              <Button
+                onClick={() =>
+                  signIn("github", {
+                    redirect: `u/${session?.user?.name}/boards`,
+                  })
+                }
+              >
+                Sign In
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </aside>
