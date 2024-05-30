@@ -2,6 +2,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import React from "react";
 import { auth } from "../../../../../../auth";
 import { redirect } from "next/navigation";
+import Board from "@/components/board/Board";
 
 export const metadata = {
   title: "Boards | Tasky",
@@ -16,7 +17,13 @@ async function Boards() {
     redirect("/signin");
   }
 
-  return <div className="flex-[79.74%]">Boardss</div>;
+  return (
+    <div className="flex-[79.74%]">
+      <section>
+        <Board />
+      </section>
+    </div>
+  );
 }
 
 export default Boards;
