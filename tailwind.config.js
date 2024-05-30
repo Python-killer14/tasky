@@ -16,13 +16,13 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    height: {
-      "screen-nav": "calc(100dvh-53px)",
-    },
-    minHeight: {
-      "screen-nav": "calc(100vh-53px)",
-    },
     extend: {
+      height: {
+        screenNav: "calc(100dvh - 53px)",
+      },
+      minHeight: {
+        screenNav: "calc(100dvh - 53px)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

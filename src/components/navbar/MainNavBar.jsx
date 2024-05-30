@@ -36,15 +36,7 @@ function MainNavBar() {
             <PopoverProfileMenu />
           ) : (
             <div>
-              <Button
-                onClick={() =>
-                  signIn("github", {
-                    redirectTo: `/u/${session?.user?.name}/boards`,
-                  })
-                }
-              >
-                Sign In
-              </Button>
+              <Link href="/signin">Sign In</Link>
             </div>
           )}
         </div>

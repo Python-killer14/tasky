@@ -1,14 +1,17 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import MainNavBar from "@/components/navbar/MainNavBar";
 import MainSidebarNav from "@/components/sidebar/MainSidebarNav";
+import SidebarWrapper from "@/components/sidebar/SidebarWrapper";
 
 function layout({ children }) {
   return (
     <div>
-      <main className="flex items-start gap-3 h-full">
-        <MainSidebarNav />
+      {/* <MaxWidthWrapper> */}
+      <main className="flex items-start gap-3 h-[calc(100vh-53px)]">
+        {/* <MainSidebarNav /> */}
+        <SidebarWrapper />
         {children}
       </main>
+      {/* </MaxWidthWrapper> */}
     </div>
   );
 }

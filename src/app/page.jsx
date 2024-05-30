@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button.jsx";
 
 // Utils
 import { signInUserCredentail } from "@/actions/userAuth.js";
+import Link from "next/link.js";
 
 export const metadata = {
   title: "Tasky | Home",
@@ -16,13 +17,13 @@ export const metadata = {
 export default async function Home() {
   const session = await auth();
 
-  // if (session && session.user) {
-  //   redirect(formatSlug(`/u/${session?.user?.name}/boards`));
-  // }
+  if (session && session.user) {
+    redirect(formatSlug(`/u/${session?.user?.name}/boards`));
+  }
 
   return (
-    <main className="flex-[79.74%] bg-gradient-to-l from-[#ffda64] to-[#f0419c]">
-      <MaxWidthWrapper>
+    <MaxWidthWrapper>
+      <main className="flex-[79.74%] bg-gradient-to-l from-[#ffda64] to-[#f0419c] min-h-screenNav">
         <div className="flex px-10 justify-center py-4 pt-20">
           <section className="flex-1 max-w-[460px]">
             <h1 className="text-5xl font-bold text-white">
@@ -32,14 +33,14 @@ export default async function Home() {
               Keep everything in the same place—even if your team isn&#39;t.
             </h4>
             <section>
-              <form action={signInUserCredentail}>
+              <Link href="/signin">
                 <Button
                   type="submit"
                   className="mt-4 py-3 px-6 bg-lightGreen text-base text-black hover:bg-darkGreen hover:text-white"
                 >
                   Get Started, it&#39;s free
                 </Button>
-              </form>
+              </Link>
             </section>
           </section>
           <section className="flex-1 max-w-[500px]">
@@ -50,7 +51,7 @@ export default async function Home() {
             />
           </section>
         </div>
-      </MaxWidthWrapper>
-    </main>
+      </main>
+    </MaxWidthWrapper>
   );
 }

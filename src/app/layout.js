@@ -6,7 +6,6 @@ import MainNavBar from "@/components/navbar/MainNavBar";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import StoreProvider from "@/redux/StoreProvider";
 import { SessionProvider } from "next-auth/react";
-import MainSidebarNav from "@/components/sidebar/MainSidebarNav";
 
 // const inter = Inter({ subsets: ["latin"] });
 const notoKufiArabic = Noto_Kufi_Arabic({ subsets: ["latin"] });
@@ -35,10 +34,7 @@ export default function RootLayout({ children }) {
           <body className={cn(notoKufiArabic.className, "")}>
             <MaxWidthWrapper>
               <MainNavBar />
-              <main className=" h-full">
-                {/* <MainSidebarNav /> */}
-                {children}
-              </main>
+              <main className=" h-full">{children}</main>
             </MaxWidthWrapper>
           </body>
         </html>

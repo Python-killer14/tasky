@@ -1,5 +1,7 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import React from "react";
+import { auth } from "../../../../../../auth";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Boards | Tasky",
@@ -7,8 +9,14 @@ export const metadata = {
     "Tasky is a simple and powerfull project management kanban platform. ",
 };
 
-function Boards() {
-  return <div className="flex-[79.74%] bg-red-50 ">Boards</div>;
+async function Boards() {
+  const session = await auth();
+
+  if (!session) {
+    redirect("/signin");
+  }
+
+  return <div className="flex-[79.74%]">Boardss</div>;
 }
 
 export default Boards;

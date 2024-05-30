@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import SidebarCategoryList from "./SidebarCategoryList";
 import { Divider } from "@mui/material";
+import { ArrowBigLeft } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const menus = [
   {
@@ -36,17 +39,20 @@ const workspaces = [
   },
 ];
 
-function MainSidebarNav() {
+function MainSidebarNav({ sidebarExpanded }) {
   return (
-    <aside className="flex-[20.26%] max-w-[257px] sticky top-0 left-0 h-screen-nav border-r-[1px]">
-      <div>Sidebar expander</div>
-      <SidebarCategoryList navBarMenus={menus} />
-      <Divider className="my-2" />
-      <SidebarCategoryList
-        navBarMenus={workspaces}
-        categoryTitle="Workspaces"
-        isWorkspace={true}
-      />
+    <aside
+      className={cn(sidebarExpanded ? "" : "absolute -left-60", "min-w-64")}
+    >
+      <div>
+        <SidebarCategoryList navBarMenus={menus} />
+        <Divider className="my-2" />
+        <SidebarCategoryList
+          navBarMenus={workspaces}
+          categoryTitle="Workspaces"
+          isWorkspace={true}
+        />
+      </div>
     </aside>
   );
 }

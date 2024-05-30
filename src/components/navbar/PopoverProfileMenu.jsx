@@ -37,9 +37,11 @@ function PopoverProfileMenu() {
                 />
               </Avatar>
               <div>
-                <p className="text-sm text-muted-foreground">Robel Tesfay</p>
+                <p className="text-sm text-muted-foreground">
+                  {session?.user?.name}
+                </p>
                 <p className="text-xs text-muted-foreground">
-                  8hjXx@example.com
+                  {session?.user?.email}
                 </p>
               </div>
             </div>
