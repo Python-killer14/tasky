@@ -4,7 +4,7 @@ import Card from "./Card";
 const BoardList = () => {
   return (
     <div>
-      <section className=" py-2">
+      <section className=" board_container h-[443px] overflow-hidden overflow-y-scroll">
         <Card />
         <Card />
       </section>

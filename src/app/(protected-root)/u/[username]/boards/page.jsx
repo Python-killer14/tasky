@@ -18,7 +18,7 @@ async function Boards() {
   }
 
   return (
-    <div className="flex-[79.74%]">
+    <div className="flex-[79.74%] pt-3 px-2">
       <section>
         <Board />
       </section>

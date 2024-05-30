@@ -13,10 +13,10 @@ const Board = () => {
         <Ellipsis className="cursor-pointer" />
       </section>
       <BoardList />
-      <section>
+      <section className="pt-2">
         <Button
           variant="outline"
-          className=" w-full flex item-center justify-start gap-2"
+          className="w-full flex item-center justify-start gap-2"
         >
           <span>
             <Plus />
