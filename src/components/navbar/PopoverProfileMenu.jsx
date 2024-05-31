@@ -14,7 +14,7 @@ import { useSession } from "next-auth/react";
 
 function PopoverProfileMenu() {
   const { data: session } = useSession();
-  console.log("session", session);
+
   return (
     <Popover>
       <PopoverTrigger>

@@ -5,7 +5,6 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper.jsx";
 import { Button } from "@/components/ui/button.jsx";
 
 // Utils
-import { signInUserCredentail } from "@/actions/userAuth.js";
 import Link from "next/link.js";
 
 export const metadata = {
@@ -29,7 +28,7 @@ export default async function Home() {
             <h1 className="text-5xl font-bold text-white">
               Tasky brings all your tasks, teammates, and tools together
             </h1>
-            <h4 className=" mt-2 text-darkGreen font-medium text-lg">
+            <h4 className="mt-2 text-darkGreen font-medium text-lg">
               Keep everything in the same place—even if your team isn&#39;t.
             </h4>
             <section>

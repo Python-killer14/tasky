@@ -42,7 +42,10 @@ const workspaces = [
 function MainSidebarNav({ sidebarExpanded }) {
   return (
     <aside
-      className={cn(sidebarExpanded ? "" : "absolute -left-60", "min-w-64")}
+      className={cn(
+        sidebarExpanded ? "" : "absolute -left-60",
+        "z-10 min-w-64"
+      )}
     >
       <div>
         <SidebarCategoryList navBarMenus={menus} />

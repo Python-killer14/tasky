@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "./Card";
 
-const BoardList = () => {
+const CardList = () => {
   return (
     <div>
-      <section className=" board_container h-[443px] overflow-hidden overflow-y-scroll">
+      <section className="board_container h-[433px] overflow-hidden overflow-y-scroll ">
         <Card />
         <Card />
       </section>
@@ -12,4 +12,4 @@ const BoardList = () => {
   );
 };
 
-export default BoardList;
+export default CardList;

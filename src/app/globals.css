@@ -62,3 +62,7 @@
 .board_container {
   scrollbar-width: thin;
 }
+
+.boards_page {
+  scrollbar-width: none;
+}

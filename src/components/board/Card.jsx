@@ -7,13 +7,13 @@ import { Avatar } from "@mui/material";
 
 const Card = () => {
   return (
-    <article className="group relative  bg-white border-transparent border-2 rounded-lg overflow-hidden shadow hover:border-lightGreen my-2">
+    <article className="group relative bg-white border-transparent border-2 rounded-xl overflow-hidden shadow hover:border-lightGreen mb-2">
       <section className="mb-1">
         <Image
           src="https://images.unsplash.com/photo-1503424886307-b090341d25d1?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           height={300}
           width={300}
-          className=" rounded-t-md"
+          className="rounded-t-md"
         />
       </section>
       <div className="absolute hidden top-2 right-2 bg-white rounded-full p-1 group-hover:block ">

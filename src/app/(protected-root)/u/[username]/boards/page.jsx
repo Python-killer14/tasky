@@ -18,10 +18,14 @@ async function Boards() {
   }
 
   return (
-    <div className="flex-[79.74%] pt-3 px-2">
-      <section>
-        <Board />
-      </section>
+    <div className="boards_page flex gap-3 overflow-x-scroll flex-[79.74%] pt-3 px-2">
+      {/* <section className="boards_page flex gap-3 w-[1200px] overflow-x-scroll"> */}
+      <Board />
+      <Board />
+      <Board />
+      <Board />
+      <Board />
+      {/* </section> */}
     </div>
   );
 }
